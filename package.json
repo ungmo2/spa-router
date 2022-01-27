@@ -1,0 +1,16 @@
+{
+  "name": "spa-router",
+  "version": "1.0.0",
+  "scripts": {
+    "link": "nodemon 1_link/server",
+    "ajax": "nodemon 2_ajax/server",
+    "hash": "nodemon 3_hash/server",
+    "pjax": "nodemon 4_pjax/server"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
