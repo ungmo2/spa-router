@@ -1,6 +1,6 @@
 import { Home, Service, About, NotFound } from './components.js';
 
-const root = document.getElementById('root');
+const $root = document.getElementById('root');
 
 const routes = [
   { path: '', component: Home },
@@ -13,7 +13,7 @@ const render = async () => {
     // url의 hash를 취득
     const hash = window.location.hash.replace('#', '');
     const component = routes.find(route => route.path === hash)?.component || NotFound;
-    root.replaceChildren(await component());
+    $root.replaceChildren(await component());
   } catch (err) {
     console.error(err);
   }

@@ -1,7 +1,7 @@
 import { Home, Service, About, NotFound } from './components.js';
 
-const root = document.getElementById('root');
-const navigation = document.getElementById('navigation');
+const $root = document.getElementById('root');
+const $navigation = document.getElementById('navigation');
 
 const routes = [
   { path: '/', component: Home },
@@ -12,14 +12,14 @@ const routes = [
 const render = async path => {
   try {
     const component = routes.find(route => route.path === path)?.component || NotFound;
-    root.replaceChildren(await component());
+    $root.replaceChildren(await component());
   } catch (err) {
     console.error(err);
   }
 };
 
 // TODO: ajax 요청은 주소창의 url을 변경시키지 않으므로 history 관리가 되지 않는다.
-navigation.onclick = e => {
+$navigation.onclick = e => {
   if (!e.target.matches('#navigation > li > a')) return;
   e.preventDefault();
   const path = e.target.getAttribute('href');

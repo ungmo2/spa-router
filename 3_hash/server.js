@@ -6,6 +6,11 @@ const port = 5003;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/api/:page', (req, res) => {
+  const { page } = req.params;
+  res.sendFile(path.join(__dirname, `public/data/${page}.json`));
+});
+
 app.listen(port, () => {
   console.log(`Server listening on http:/localhost:${port}`);
 });
