@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/:page', (req, res) => {
   const { page } = req.params;
-  res.sendFile(path.join(__dirname, `public/data/${page}.json`));
+  res.sendFile(path.join(__dirname, `/data/${page}.json`));
 });
 
 app.listen(port, () => {
